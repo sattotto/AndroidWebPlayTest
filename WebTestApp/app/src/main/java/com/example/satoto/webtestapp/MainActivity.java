@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
         sendFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("--------  hoge");
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

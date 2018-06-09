@@ -32,6 +32,6 @@ public class SubActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
 
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://live2.nicovideo.jp/watch/lv313468350");
+        myWebView.loadUrl("http://www.nicovideo.jp/watch/sm8628149");
     }
 }

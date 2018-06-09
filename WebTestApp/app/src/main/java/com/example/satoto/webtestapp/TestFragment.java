@@ -6,7 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
+
+import java.util.zip.Inflater;
 
 public class TestFragment extends Fragment {
 
@@ -27,8 +32,17 @@ public class TestFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_main,
-                container, false);
+        View v = inflater.inflate(R.layout.fragment_main, container, false);
+
+        WebView myWebView = v.findViewById(R.id.webView_fragment);
+
+        WebSettings settings = myWebView.getSettings();
+        settings.setJavaScriptEnabled(true);
+
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("http://www.nicovideo.jp/watch/sm8628149");
+
+        return v;
     }
 
     @Override
@@ -40,6 +54,8 @@ public class TestFragment extends Fragment {
             String str = args.getString("Message");
             TextView textView = view.findViewById(R.id.text_fragment);
             textView.setText(str);
+
+
         }
     }
 }
