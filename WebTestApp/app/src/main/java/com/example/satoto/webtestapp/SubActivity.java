@@ -3,6 +3,8 @@ package com.example.satoto.webtestapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 public class SubActivity extends AppCompatActivity {
@@ -19,5 +21,9 @@ public class SubActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        WebView myWebView = (WebView) findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("https://www.google.com/");
     }
 }
